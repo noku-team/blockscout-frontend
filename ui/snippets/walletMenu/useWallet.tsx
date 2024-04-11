@@ -24,6 +24,24 @@ export default function useWallet({ source }: Params) {
     setIsModalOpening(true);
     await open();
     setIsModalOpening(false);
+    const interval = window.setInterval(() => {
+      try {
+        const wallets = document.querySelectorAll('w3m-modal')[0]!.
+          shadowRoot!.querySelector('wui-card')!.
+          querySelector('w3m-router')!.shadowRoot!.
+          querySelector('w3m-connect-view')!.shadowRoot!.
+          querySelectorAll('wui-list-wallet');
+        wallets.forEach((wallet) => {
+          if (wallet.getAttribute('name') !== 'MetaMask') {
+            wallet.remove();
+          }
+        });
+      } catch (e) {}
+    }, 10);
+    setTimeout(() => {
+      clearInterval(interval);
+    }, 10000);
+
     mixpanel.logEvent(mixpanel.EventTypes.WALLET_CONNECT, { Source: source, Status: 'Started' });
     isConnectionStarted.current = true;
   }, [ open, source ]);

@@ -1,16 +1,11 @@
 import { Grid } from '@chakra-ui/react';
-import BigNumber from 'bignumber.js';
 import React from 'react';
 
 import { route } from 'nextjs-routes';
 
 import config from 'configs/app';
 import useApiQuery from 'lib/api/useApiQuery';
-import { WEI } from 'lib/consts';
 import { HOMEPAGE_STATS } from 'stubs/stats';
-import GasInfoTooltip from 'ui/shared/gas/GasInfoTooltip';
-import GasPrice from 'ui/shared/gas/GasPrice';
-import IconSvg from 'ui/shared/IconSvg';
 
 import StatsItem from './StatsItem';
 
@@ -19,7 +14,7 @@ const hasAvgBlockTime = config.UI.homepage.showAvgBlockTime;
 const rollupFeature = config.features.rollup;
 
 const Stats = () => {
-  const { data, isPlaceholderData, isError, dataUpdatedAt } = useApiQuery('stats', {
+  const { data, isPlaceholderData, isError } = useApiQuery('stats', {
     queryOptions: {
       refetchOnMount: false,
       placeholderData: HOMEPAGE_STATS,
@@ -60,22 +55,6 @@ const Stats = () => {
     !data.gas_prices && itemsCount--;
     data.rootstock_locked_btc && itemsCount++;
     const isOdd = Boolean(itemsCount % 2);
-    const gasInfoTooltip = hasGasTracker && data.gas_prices ? (
-      <GasInfoTooltip data={ data } dataUpdatedAt={ dataUpdatedAt }>
-        <IconSvg
-          isLoading={ isLoading }
-          name="info"
-          boxSize={ 5 }
-          display="block"
-          cursor="pointer"
-          _hover={{ color: 'link_hovered' }}
-          position="absolute"
-          top={{ base: 'calc(50% - 12px)', lg: '10px', xl: 'calc(50% - 12px)' }}
-          right="10px"
-        />
-      </GasInfoTooltip>
-    ) : null;
-
     content = (
       <>
         { rollupFeature.isEnabled && rollupFeature.type === 'zkEvm' && (
@@ -127,25 +106,6 @@ const Stats = () => {
           _last={ isOdd ? lastItemTouchStyle : undefined }
           isLoading={ isLoading }
         />
-        { hasGasTracker && data.gas_prices && (
-          <StatsItem
-            icon="gas"
-            title="Gas tracker"
-            value={ <GasPrice data={ data.gas_prices.average }/> }
-            _last={ isOdd ? lastItemTouchStyle : undefined }
-            tooltip={ gasInfoTooltip }
-            isLoading={ isLoading }
-          />
-        ) }
-        { data.rootstock_locked_btc && (
-          <StatsItem
-            icon="coins/bitcoin"
-            title="BTC Locked in 2WP"
-            value={ `${ BigNumber(data.rootstock_locked_btc).div(WEI).dp(0).toFormat() } RBTC` }
-            _last={ isOdd ? lastItemTouchStyle : undefined }
-            isLoading={ isLoading }
-          />
-        ) }
       </>
     );
   }

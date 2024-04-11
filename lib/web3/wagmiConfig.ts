@@ -1,6 +1,7 @@
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config';
 import { http } from 'viem';
 import type { CreateConfigParameters } from 'wagmi';
+import { metaMask } from 'wagmi/connectors';
 
 import config from 'configs/app';
 import currentChain from 'lib/web3/currentChain';
@@ -29,6 +30,7 @@ const wagmiConfig = (() => {
       },
       enableEmail: true,
       ssr: true,
+      connectors: [ metaMask() ],
     });
 
     return wagmiConfig;

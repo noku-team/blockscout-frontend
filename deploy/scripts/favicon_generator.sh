@@ -1,6 +1,6 @@
 #!/bin/bash
 
-master_url="${FAVICON_MASTER_URL:-$NEXT_PUBLIC_NETWORK_ICON}"
+master_url="https://raw.githubusercontent.com/noku-team/blockscout-frontend/main/public/favicon/favicon.ico"
 export MASTER_URL="$master_url"
 
 cd ./deploy/tools/favicon-generator
