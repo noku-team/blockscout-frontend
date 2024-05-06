@@ -47,7 +47,7 @@ class MyDocument extends Document {
           <script src="/envs.js"/>
 
           { /* FAVICON */ }
-          <link rel="icon" href="/favicon/favicon.ico" sizes="48x48"/>
+          <link rel="icon" href="https://raw.githubusercontent.com/noku-team/blockscout-frontend/main/public/favicon/favicon.ico" sizes="48x48"/>
           <link rel="preload" as="image" href={ svgSprite.href }/>
         </Head>
         <body>
