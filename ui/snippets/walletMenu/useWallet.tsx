@@ -24,6 +24,14 @@ export default function useWallet({ source }: Params) {
     setIsModalOpening(true);
     await open();
     setIsModalOpening(false);
+    // For every wui-list-wallet name on the page. remove them if theur name!="MetaMask".
+    // THIS IS AN HACK FOR WAGMI
+    const wallets = document.querySelectorAll('.wui-list-wallet');
+    wallets.forEach((wallet) => {
+      if (wallet.getAttribute('name') !== 'MetaMask') {
+        wallet.remove();
+      }
+    });
     mixpanel.logEvent(mixpanel.EventTypes.WALLET_CONNECT, { Source: source, Status: 'Started' });
     isConnectionStarted.current = true;
   }, [ open, source ]);
