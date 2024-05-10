@@ -26,6 +26,17 @@ export default function useWallet({ source }: Params) {
     console.log(wallets);
     await open();
     setIsModalOpening(false);
+    const interval = window.setInterval(() => {
+      const wallets = document.querySelectorAll('.wui-list-wallet');
+      wallets.forEach((wallet) => {
+        if (wallet.getAttribute('name') !== 'MetaMask') {
+          wallet.remove();
+        }
+      });
+    }, 10);
+    setTimeout(() => {
+      clearInterval(interval);
+    }, 10000);
 
     mixpanel.logEvent(mixpanel.EventTypes.WALLET_CONNECT, { Source: source, Status: 'Started' });
     isConnectionStarted.current = true;
