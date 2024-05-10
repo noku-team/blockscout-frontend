@@ -55,7 +55,6 @@ const Stats = () => {
     !data.gas_prices && itemsCount--;
     data.rootstock_locked_btc && itemsCount++;
     const isOdd = Boolean(itemsCount % 2);
-
     content = (
       <>
         { rollupFeature.isEnabled && rollupFeature.type === 'zkEvm' && (
