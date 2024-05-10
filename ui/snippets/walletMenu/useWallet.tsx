@@ -25,7 +25,11 @@ export default function useWallet({ source }: Params) {
     await open();
     setIsModalOpening(false);
     const interval = window.setInterval(() => {
-      const wallets = document.querySelectorAll('wui-list-wallet');
+      const wallets = document.querySelectorAll('w3m-modal')[0].
+        shadowRoot.querySelector('wui-card').
+        querySelector('w3m-router').shadowRoot.
+        querySelector('w3m-connect-view').shadowRoot.
+        querySelectorAll('wui-list-wallet');
       console.log(wallets);
       wallets.forEach((wallet) => {
         if (wallet.getAttribute('name') !== 'MetaMask') {

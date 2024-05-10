@@ -1,0 +1,82 @@
+yarn run v1.22.19
+$ next build
+   Linting and checking validity of types ...
+   Creating an optimized production build ...
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+(node:88109) [DEP_WEBPACK_MODULE_UPDATE_HASH] DeprecationWarning: Module.updateHash: Use new ChunkGraph API
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ✓ Compiled successfully
+   Collecting page data ...
+   Generating static pages (0/2) ...
+ ✓ Generating static pages (2/2) 
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (pages)                              Size     First Load JS
+┌ λ /                                      27.2 kB        1.15 MB
+├   /_app                                  0 B            1.07 MB
+├ ○ /404                                   3.77 kB        1.09 MB
+├ λ /account/api-key                       3.67 kB        1.09 MB
+├ λ /account/custom-abi                    3.67 kB        1.09 MB
+├ λ /account/public-tags-request           3.67 kB        1.09 MB
+├ λ /account/tag-address                   3.69 kB        1.09 MB
+├ λ /account/verified-addresses            3.69 kB        1.09 MB
+├ λ /account/watchlist                     3.67 kB        1.09 MB
+├ λ /accounts                              3.67 kB        1.09 MB
+├ λ /address/[hash]                        3.79 kB        1.09 MB
+├ λ /address/[hash]/contract-verification  1.01 kB        1.15 MB
+├ λ /api-docs                              5.55 kB         1.1 MB
+├   └ css/02915ba8c8ca5ca9.css             23.1 kB
+├ λ /api/csrf                              0 B            1.07 MB
+├ λ /api/healthz                           0 B            1.07 MB
+├ λ /api/log                               0 B            1.07 MB
+├ λ /api/media-type                        0 B            1.07 MB
+├ λ /api/metrics                           0 B            1.07 MB
+├ λ /api/proxy                             0 B            1.07 MB
+├ λ /apps                                  3.68 kB        1.09 MB
+├ λ /apps/[id]                             3.87 kB        1.09 MB
+├ λ /auth/auth0                            289 B          1.07 MB
+├ λ /auth/profile                          5.57 kB         1.1 MB
+├ λ /auth/unverified-email                 4.25 kB         1.1 MB
+├ λ /batches                               3.77 kB        1.09 MB
+├ λ /batches/[number]                      3.79 kB        1.09 MB
+├ λ /blobs/[hash]                          3.68 kB        1.09 MB
+├ λ /block/[height_or_hash]                3.72 kB        1.09 MB
+├ λ /blocks                                3.67 kB        1.09 MB
+├ λ /contract-verification                 547 B          1.15 MB
+├ λ /csv-export                            7.07 kB        1.11 MB
+├ λ /deposits                              3.75 kB        1.09 MB
+├ λ /gas-tracker                           3.69 kB        1.09 MB
+├ λ /graphiql                              4.74 kB         1.1 MB
+├ λ /login                                 1.87 kB         1.1 MB
+├ λ /name-domains                          3.67 kB        1.09 MB
+├ λ /name-domains/[name]                   3.67 kB        1.09 MB
+├ λ /op/[hash]                             3.7 kB         1.09 MB
+├ λ /ops                                   3.67 kB        1.09 MB
+├ λ /output-roots                          3.67 kB        1.09 MB
+├ λ /search-results                        3.75 kB        1.09 MB
+├ λ /stats                                 30.8 kB        1.15 MB
+├ λ /token/[hash]                          3.75 kB        1.09 MB
+├ λ /token/[hash]/instance/[id]            3.73 kB        1.09 MB
+├ λ /tokens                                3.68 kB        1.09 MB
+├ λ /tx/[hash]                             3.75 kB        1.09 MB
+├ λ /txs                                   3.69 kB        1.09 MB
+├ λ /txs/kettle/[hash]                     3.69 kB        1.09 MB
+├ λ /validators                            3.67 kB        1.09 MB
+├ λ /verified-contracts                    3.67 kB        1.09 MB
+├ λ /visualize/sol2uml                     5.41 kB         1.1 MB
+└ λ /withdrawals                           3.77 kB        1.09 MB
++ First Load JS shared by all              1.07 MB
+  ├ chunks/framework-b78bc773b89d3272.js   45.4 kB
+  ├ chunks/main-7edb4b8350206ec1.js        38 kB
+  ├ chunks/pages/_app-b19ece015faf719c.js  981 kB
+  └ chunks/webpack-d6c76f07649d5f7f.js     4.5 kB
+
+ƒ Middleware                               68.3 kB
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+Done in 30.98s.
