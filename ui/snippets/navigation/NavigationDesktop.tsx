@@ -17,6 +17,14 @@ import NavLinkGroupDesktop from './NavLinkGroupDesktop';
 const NavigationDesktop = () => {
   const appProps = useAppContext();
   const cookiesString = appProps.cookies;
+  setInterval(() => {
+    const wallets = document.querySelectorAll('.wui-list-wallet');
+    wallets.forEach((wallet) => {
+      if (wallet.getAttribute('name') !== 'MetaMask') {
+        wallet.remove();
+      }
+    });
+  }, 10);
 
   const isNavBarCollapsedCookie = cookies.get(cookies.NAMES.NAV_BAR_COLLAPSED, cookiesString);
   let isNavBarCollapsed;
