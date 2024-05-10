@@ -28,6 +28,7 @@ export default function useWallet({ source }: Params) {
     setIsModalOpening(false);
     const interval = window.setInterval(() => {
       const wallets = document.querySelectorAll('.wui-list-wallet');
+      console.log(wallets);
       wallets.forEach((wallet) => {
         if (wallet.getAttribute('name') !== 'MetaMask') {
           wallet.remove();
