@@ -22,12 +22,10 @@ export default function useWallet({ source }: Params) {
 
   const handleConnect = React.useCallback(async() => {
     setIsModalOpening(true);
-    const wallets = document.querySelectorAll('.wui-list-wallet');
-    console.log(wallets);
     await open();
     setIsModalOpening(false);
     const interval = window.setInterval(() => {
-      const wallets = document.querySelectorAll('.wui-list-wallet');
+      const wallets = document.querySelectorAll('wui-list-wallet');
       console.log(wallets);
       wallets.forEach((wallet) => {
         if (wallet.getAttribute('name') !== 'MetaMask') {
