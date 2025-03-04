@@ -22,7 +22,7 @@ const hiddenLinks = (() => {
 })();
 
 // eslint-disable-next-line max-len
-const HOMEPAGE_PLATE_BACKGROUND_DEFAULT = 'radial-gradient(103.03% 103.03% at 0% 0%, #FF312C 0%, #FF7976 100%), #FF312C';
+const HOMEPAGE_PLATE_BACKGROUND_DEFAULT = 'linear-gradient(to right bottom, rgba(255,49,44,0.6) 0%, rgba(255,49,44,1) 60%, rgba(205,5,0,1) 100%)';
 
 const UI = Object.freeze({
   sidebar: {

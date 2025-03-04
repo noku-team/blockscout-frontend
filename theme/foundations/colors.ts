@@ -60,6 +60,10 @@ const colors = {
   facebook: '#4460A0',
   medium: '#231F20',
   reddit: '#FF4500',
+  swissLedgerRed: '#FF312C',
+  swissLedgerLightRed: '#FF7976',
+  swissLedgerBlack: '#1A1A1A',
+  swissLedgerGray: '#6A6A6A',
 };
 
 export default colors;
