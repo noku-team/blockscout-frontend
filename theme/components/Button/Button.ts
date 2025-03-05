@@ -44,11 +44,10 @@ const variantSolid = defineStyle((props) => {
 
 const variantOutline = defineStyle((props) => {
   const { colorScheme: c } = props;
-  console.log(c);
   const isGrayTheme = c === 'gray' || c === 'gray-dark';
-  const color = isGrayTheme ? mode('blackAlpha.800', 'whiteAlpha.800')(props) : mode(`swissLedgerRed`, `swissLedgerLightRed`)(props);
-  const borderColor = isGrayTheme ? mode('gray.200', 'gray.600')(props) : mode(`swissLedgerRed`, `swissLedgerLightRed`)(props);
-  const activeBg = isGrayTheme ? mode('blue.50', 'gray.600')(props) : mode(`gray.50`, 'gray.600')(props);
+  const color = isGrayTheme ? mode('blackAlpha.800', 'whiteAlpha.800')(props) : mode(`swissLedgerRed`, `swissLedgerRed`)(props);
+  const borderColor = isGrayTheme ? mode('gray.200', 'gray.600')(props) : mode(`swissLedgerRed`, `swissLedgerRed`)(props);
+  const activeBg = isGrayTheme ? mode('blue.50', 'gray.600')(props) : mode(`${ c }.50`, 'gray.600')(props);
   const activeColor = (() => {
     if (c === 'gray') {
       return mode('blue.600', 'gray.50')(props);

@@ -63,6 +63,7 @@ const colors = {
   swissLedgerRed: '#FF312C',
   swissLedgerLightRed: '#FF7976',
   swissLedgerBlack: '#1A1A1A',
+  swissLedgerLightGray: '#F5F5F5',
   swissLedgerGray: '#6A6A6A',
 };
 
