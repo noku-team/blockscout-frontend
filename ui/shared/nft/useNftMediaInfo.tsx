@@ -62,6 +62,9 @@ function useNftMediaTypeQuery(url: string | null, enabled: boolean) {
       if (!url) {
         return null;
       }
+      if (url.includes('ipfs.io')) {
+        url = url.replace('ipfs.io', 'ipfs.noku.io');
+      }
 
       // media could be either image, gif, video or html-page
       // so we pre-fetch the resources in order to get its content type
